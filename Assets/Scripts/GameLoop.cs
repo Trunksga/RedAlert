@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameLoop : MonoBehaviour {
 
+    private SceneStateController mController = null;
 
     private void Awake()
     {
@@ -11,11 +12,11 @@ public class GameLoop : MonoBehaviour {
     }
     // Use this for initialization
     void Start () {
-		
+        mController = new SceneStateController() ;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        mController.StateUpdate();
 	}
 }
