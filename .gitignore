@@ -1,3 +1,6 @@
 RedAlertProject.sln
 RedAlertProject.csproj
 Library/
+RedAlert.csproj
+RedAlert.sln
+Temp/
