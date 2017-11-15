@@ -6,13 +6,17 @@ using System.Text;
 public class ISceneState
 {
     private string mSceneName;
-    private SceneStateController mController;
+    protected SceneStateController mController;
 
 
     public ISceneState(string sceneName, SceneStateController controller)
     {
         mSceneName = sceneName;
         mController = controller;
+    }
+
+    public string SceneName {
+        get { return mSceneName; }
     }
 
     public virtual void StateStart()

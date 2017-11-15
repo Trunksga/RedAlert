@@ -2,13 +2,36 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using UnityEngine.UI;
+using UnityEngine;
 
 public class StartState : ISceneState
 {
-    public StartState(string sceneName, SceneStateController controller) 
-        : base(sceneName, controller)
+    public StartState( SceneStateController controller) 
+        : base("01StartScene", controller)
     {
+    }
+
+
+    private Image mLogo;
+    private float mSmoothingSpeed = 1f;
+    private float mWaitTime = 2;
+    public override void StateStart()
+    {
+        mLogo = GameObject.Find("Logo").GetComponent<Image>();
+        mLogo.color = Color.black;
+    }
+
+    public override void StateUpdate()
+    {
+        mLogo.color = Color.Lerp(mLogo.color, Color.white, mSmoothingSpeed * Time.deltaTime);
+
+        mWaitTime -= Time.deltaTime;
+        if (mWaitTime <= 0)
+        {
+            mController.SetState(new MainMemuState(mController));
+        }
+
     }
 }
  

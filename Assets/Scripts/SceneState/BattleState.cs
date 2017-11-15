@@ -6,8 +6,8 @@ using System.Text;
 
 public class BattleState :ISceneState
 {
-    public BattleState(string sceneName, SceneStateController controller) 
-        : base(sceneName, controller)
+    public BattleState(SceneStateController controller) 
+        : base("03BattleScene", controller)
     {
 
     }

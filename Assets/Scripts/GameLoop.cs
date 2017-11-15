@@ -13,6 +13,7 @@ public class GameLoop : MonoBehaviour {
     // Use this for initialization
     void Start () {
         mController = new SceneStateController() ;
+        mController.SetState(new StartState(mController));
 	}
 	
 	// Update is called once per frame
