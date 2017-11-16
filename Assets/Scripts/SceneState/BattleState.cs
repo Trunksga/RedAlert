@@ -11,4 +11,26 @@ public class BattleState :ISceneState
     {
 
     }
+
+    private GameFacade mFacade;
+
+    public override void StateStart()
+    {
+        mFacade.Init();
+    }
+
+    public override void StateEnd()
+    {
+        mFacade.Release();
+    }
+
+    public override void StateUpdate()
+    {
+        if (mFacade.IsGameOver)
+        {
+            mController.SetState(new MainMemuState(mController));
+        }
+
+        mFacade.Update();
+    }
 }
