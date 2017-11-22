@@ -12,7 +12,7 @@ public class BattleState :ISceneState
 
     }
 
-    private GameFacade mFacade;
+    private GameFacade mFacade = GameFacade.Instance;
 
     public override void StateStart()
     {
